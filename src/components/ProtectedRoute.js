@@ -28,9 +28,9 @@ function ProtectedRoute({ children }) {
     },
     {
       title: "Profile",
-      paths: ["/profile"],
+      paths: ["/user/profile"],
       icon: <i className="ri-user-line"></i>,
-      onClick: () => navigate("/profile"),
+      onClick: () => navigate("/user/profile"),
     },
     {
       title: "Logout",
@@ -63,10 +63,10 @@ function ProtectedRoute({ children }) {
       onClick: () => navigate("/admin/reports"),
     },
     {
-      title: "Profile",
-      paths: ["/profile"],
+      title: "Users",
+      paths: ["/admin/users"],
       icon: <i className="ri-user-line"></i>,
-      onClick: () => navigate("/profile"),
+      onClick: () => navigate("/admin/users"),
     },
     {
       title: "Logout",

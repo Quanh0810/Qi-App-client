@@ -23,7 +23,7 @@ function AdminReports() {
     {
         title: "User Name",
         dataIndex: "userName",
-        // render: (text, record) => <>{record.user.name}</>,
+        render: (text, record) => <>{record.user.name}</>,
     },
     {
       title: "Date",

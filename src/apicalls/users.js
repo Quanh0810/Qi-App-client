@@ -27,3 +27,25 @@ export const getUserInfo = async () => {
     return error.response.data;
   }
 };
+
+export const getAllUserInfo = async () => {
+  try {
+    const response = await axiosInstance.get("/api/users/get-all-user-info");
+    // console.log(response)
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+
+export const deleteUserInfo = async (payload) => {
+  try {
+    const response = await axiosInstance.get("/api/users/delete-user-by-id", payload);
+    // console.log(response)
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+
+

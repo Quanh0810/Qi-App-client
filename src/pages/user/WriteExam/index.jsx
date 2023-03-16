@@ -21,6 +21,7 @@ function WriteExam() {
   const [timeUp, setTimeUp] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
   const { user } = useSelector((state) => state.users);
+  console.log(user);
   const getExamData = async () => {
     try {
       dispatch(ShowLoading());
@@ -69,7 +70,7 @@ function WriteExam() {
       const response = await addReport({
         exam: params.id,
         result: tempResult,
-        user: user.id,
+        user: user._id,
       });
       dispatch(HideLoading());
       if (response.success) {
