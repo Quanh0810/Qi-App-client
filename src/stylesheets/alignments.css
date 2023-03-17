@@ -44,6 +44,7 @@
     flex-direction: column;
 }
 
+
 .justify-center{
     justify-content: center;
 }
@@ -107,5 +108,10 @@
 }
 .mt-2{
     margin-top: 20px;
+}
+
+/* profile */
+.pb-1{
+    padding-bottom: 10px;
 }
 

@@ -5,6 +5,7 @@ import "./stylesheets/textelement.css";
 import "./stylesheets/custim-components.css";
 import "./stylesheets/form-elements.css";
 import "./stylesheets/layout.css";
+import "./stylesheets/profile.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/common/Login";
 import Register from "./pages/common/Register";
@@ -56,14 +57,14 @@ function App() {
               </ProtectedRoute>
             }
           />
-          {/* <Route
+          <Route
             path="/user/profile"
             element={
               <ProtectedRoute>
                 <Profile />
               </ProtectedRoute>
             }
-          /> */}
+          /> 
           {/* admin route */}
           <Route
             path="/admin/exams"
