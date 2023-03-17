@@ -27,12 +27,12 @@
 .divider-profile {
   border-bottom: 4px solid rgb(214, 208, 208);
   margin-top: 17px;
-  width: 95%;
+  width: 96%;
 }
 
 .primary-contained-btn-profile{
     margin-top: 10px;
-    width: 95%;
+    width: 96%;
     background-color: var(--primary);
     color: white;
 }

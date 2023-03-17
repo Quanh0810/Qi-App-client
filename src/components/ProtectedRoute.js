@@ -33,6 +33,12 @@ function ProtectedRoute({ children }) {
       onClick: () => navigate("/user/profile"),
     },
     {
+      title: "Chart",
+      paths: ["/user/chart"],
+      icon: <i class="ri-line-chart-fill"></i>,
+      onClick: () => navigate("/user/chart"),
+    },
+    {
       title: "Logout",
       paths: ["/logout"],
       icon: <i className="ri-logout-box-line"></i>,

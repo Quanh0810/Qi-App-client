@@ -20,6 +20,7 @@ import UserReports from "./pages/user/UserReports";
 import AdminReports from "./pages/admin/AdminReports";
 import Profile from "./pages/user/Profile";
 import Users from "./pages/admin/Users";
+import Chart from "./pages/user/Chart";
 
 function App() {
   const { loading } = useSelector((state) => state.loader);
@@ -62,6 +63,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            }
+          /> 
+          <Route
+            path="/user/chart"
+            element={
+              <ProtectedRoute>
+                <Chart />
               </ProtectedRoute>
             }
           /> 
