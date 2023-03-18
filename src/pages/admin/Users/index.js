@@ -43,12 +43,10 @@ function Users() {
   };
 
   // loi khong xoa duoc user
-  const deleteUser = async (userId) => {
+  const deleteUser = async () => {
     try {
       dispatch(ShowLoading());
-      const response = await deleteUserInfo({
-        userId,
-      });
+      const response = await deleteUserInfo();
       dispatch(HideLoading());
       if (response.success) {
         message.success(response.message);

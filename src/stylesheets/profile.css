@@ -36,3 +36,7 @@
     background-color: var(--primary);
     color: white;
 }
+
+.unchanged-input{
+  background-color: #d7d7ef;
+}

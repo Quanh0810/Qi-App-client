@@ -41,13 +41,13 @@ function Profile() {
         <Row className="profileContainer">
           <Col md={14}>
             <Form>
-              <Form.Item className="pb-1">
+              <Form.Item className="pb-1 ">
                 <label>Name</label>
-                <input type="text"></input>
+                <input type="text" className="unchanged-input" readOnly></input>
               </Form.Item>
               <Form.Item className="pb-1">
                 <label>Email</label>
-                <input type="email"></input>
+                <input type="email" className="unchanged-input" readOnly></input>
               </Form.Item>
               <div className="divider-profile"></div>
               <div className="label-category ">
