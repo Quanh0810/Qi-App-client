@@ -43,14 +43,23 @@ function Users() {
   };
 
   // loi khong xoa duoc user
-  const deleteUser = async () => {
+  const deleteUser = async (userName) => {
     try {
       dispatch(ShowLoading());
-      const response = await deleteUserInfo();
+
+      const response = await deleteUserInfo({ userName });
       dispatch(HideLoading());
       if (response.success) {
         message.success(response.message);
-        getAllUserInfo();
+        const userList = await getAllUserInfo();
+        const userArr = userList.data.map((user) => {
+          return {
+            name: user?.name,
+            date: user?.createdAt,
+            email: user?.email,
+          };
+        });
+        setUsersData(userArr);
       } else {
         message.error(response.message);
       }
@@ -81,10 +90,11 @@ function Users() {
     {
       title: "Action",
       dataIndex: "action",
+      // render: (text, record) => console.log(record)
       render: (text, record) => (
         <i
           class="ri-delete-bin-5-line"
-          onClick={() => deleteUser(record?._id)}
+          onClick={() => deleteUser(record?.name)}
         ></i>
       ),
     },

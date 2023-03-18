@@ -13,6 +13,24 @@ function ProtectedRoute({ children }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const landingMenu = [
+    {
+      title: "Home",
+      paths: ["/", "/user/write-exam"],
+      icon: <i className="ri-home-line"></i>,
+      onClick: () => navigate("/"),
+    },
+    {
+      title: "Login",
+      paths: ["/login"],
+      icon: <i class="ri-login-circle-line"></i>,
+      onClick: () => {
+        localStorage.removeItem("token");
+        navigate("/login");
+      },
+    },
+  ];
+
   const userMenu = [
     {
       title: "Home",

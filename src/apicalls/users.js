@@ -41,7 +41,7 @@ export const getAllUserInfo = async () => {
 export const deleteUserInfo = async (payload) => {
   try {
     const response = await axiosInstance.post("/api/users/delete-user-by-id", payload);
-    console.log("user", response)
+    // console.log("user", response)
     return response.data;
   } catch (error) {
     return error.response.data;

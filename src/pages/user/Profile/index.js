@@ -1,12 +1,14 @@
-import { Button, Col, Form, message, Row } from "antd";
+import { Button, Col, Form, Input, message, Row } from "antd";
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { getUserInfo } from "../../../apicalls/users";
 import PageTitle from "../../../components/PageTitle";
 import { HideLoading, ShowLoading } from "../../../redux/loaderSlice";
 
 function Profile() {
+  const { user } = useSelector((state) => state.users);
+  console.log(user);
   // const navigate = useNavigate();
   // const dispatch = useDispatch();
   // const [profiles, setProfiles] = React.useState([]);
@@ -32,6 +34,12 @@ function Profile() {
   //   getProfile();
   // }, []);
 
+  const initialValues = {
+    name : user?.name,
+    email : user?.email
+  }
+  console.log(initialValues);
+
   return (
     <div>
       <PageTitle title="Account"></PageTitle>
@@ -40,12 +48,12 @@ function Profile() {
       <div>
         <Row className="profileContainer">
           <Col md={14}>
-            <Form>
-              <Form.Item className="pb-1 ">
+            <Form initialValues={initialValues}>
+              <Form.Item name="name" className="pb-1">
                 <label>Name</label>
-                <input type="text" className="unchanged-input" readOnly></input>
+                <Input className="unchanged-input" readOnly></Input>
               </Form.Item>
-              <Form.Item className="pb-1">
+              <Form.Item name="email" className="pb-1">
                 <label>Email</label>
                 <input type="email" className="unchanged-input" readOnly></input>
               </Form.Item>
