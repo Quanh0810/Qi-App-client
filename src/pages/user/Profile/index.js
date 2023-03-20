@@ -51,7 +51,7 @@ function Profile() {
             <Form initialValues={initialValues}>
               <Form.Item name="name" className="pb-1">
                 <label>Name</label>
-                <Input className="unchanged-input" readOnly></Input>
+                <input className="unchanged-input" readOnly></input>
               </Form.Item>
               <Form.Item name="email" className="pb-1">
                 <label>Email</label>

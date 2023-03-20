@@ -1,4 +1,4 @@
-import { Table } from "antd";
+import { Form, Table } from "antd";
 import React from "react";
 import PageTitle from "../../../components/PageTitle";
 
@@ -60,6 +60,15 @@ function Chart() {
       <PageTitle title="Chart"></PageTitle>
       <div className="divider"></div>
 
+      <Form.Item label="Exams" name="category">
+        <select name="" id="">
+          <option value="">Select Exam</option>
+          {/* <option value="Javascript">Javascript</option>
+          <option value="React">React</option>
+          <option value="Node">Node</option>
+          <option value="MongoDB">MongoDB</option> */}
+        </select>
+      </Form.Item>
       <Table columns={columns} dataSource={data} />
     </div>
   );
