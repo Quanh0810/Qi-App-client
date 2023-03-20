@@ -24,6 +24,8 @@ import Chart from "./pages/user/Chart";
 
 function App() {
   const { loading } = useSelector((state) => state.loader);
+  const { user } = useSelector((state) => state.users);
+  console.log(user)
   return (
     <>
       {loading && <Loader></Loader>}
@@ -32,6 +34,16 @@ function App() {
           {/* common routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+          {/* guest route */}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
 
           {/* user route */}
           <Route

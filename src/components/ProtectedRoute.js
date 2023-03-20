@@ -25,7 +25,7 @@ function ProtectedRoute({ children }) {
       paths: ["/login"],
       icon: <i class="ri-login-circle-line"></i>,
       onClick: () => {
-        localStorage.removeItem("token");
+        // localStorage.removeItem("token");
         navigate("/login");
       },
     },
